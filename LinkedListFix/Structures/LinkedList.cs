@@ -25,7 +25,7 @@ namespace LinkedListFix.Structures
         public bool IsReadOnly { get; }
 
         private Node<T> GetNodeByIndex(int index)
-        {
+        {//checked
             if (index < Count && index > 0)
             {
                 int placement = 0;
@@ -44,10 +44,10 @@ namespace LinkedListFix.Structures
             {
                 throw new IndexOutOfRangeException();
             }
-        }//checked
+        }
 
         private void SetLength()
-        {
+        {//checked
             if (Head == null)
             {
                 Count = 0;
@@ -80,14 +80,14 @@ namespace LinkedListFix.Structures
         }
 
         public void Clear()
-        {
+        {//checked
             Head = null;
             Last = null;
-            Count=0;
+            Count = 0;
         }
 
         public bool Contains(T item)
-        {
+        {//checked
             try
             {
                 Node<T> searchedNode = item as Node<T>;
@@ -109,7 +109,7 @@ namespace LinkedListFix.Structures
         }
 
         public void CopyTo(T[] array, int arrayIndex)
-        {
+        {//some edge cases 
             if (arrayIndex < array.Length && arrayIndex > -1)
             {
                 Array.Resize(ref array, array.Length + Count);
@@ -139,7 +139,7 @@ namespace LinkedListFix.Structures
         }
 
         public IEnumerator<T> GetEnumerator()
-        {
+        {//checked
             Node<T> currentNode = Head;
             while (currentNode.Next != null)
             {
@@ -149,7 +149,7 @@ namespace LinkedListFix.Structures
         }
 
         public int IndexOf(T item)
-        {
+        {//checked
             try
             {
                 Node<T> searchedNode = item as Node<T>;
@@ -177,7 +177,7 @@ namespace LinkedListFix.Structures
         }
 
         public void Insert(int index, T item)
-        {
+        {//deletes everything after index
             try
             {
                 Node<T> selectedNode = GetNodeByIndex(index);
@@ -194,10 +194,15 @@ namespace LinkedListFix.Structures
         }
 
         public bool Remove(T item)
-        {
+        {//checked
             try
             {
                 int previousIndex = IndexOf(item) - 1;
+                if (previousIndex==0)
+                {
+                    Head = Head.Next;
+                    return true;
+                }   
                 Node<T> selectedNode = item as Node<T>;
                 GetNodeByIndex(previousIndex).Next = selectedNode.Next;
                 return true;
@@ -209,20 +214,27 @@ namespace LinkedListFix.Structures
         }
 
         public void RemoveAt(int index)
-        {
-            try
+        {//checked
+            if (index==0)
             {
-                Node<T> previousNode = GetNodeByIndex(index - 1);
-                previousNode.Next = previousNode.Next.Next;
+                Head = Head.Next;
             }
-            catch (IndexOutOfRangeException)
+            else
             {
-                throw new IndexOutOfRangeException();
+                try
+                {
+                    Node<T> previousNode = GetNodeByIndex(index - 1);
+                    previousNode.Next = previousNode.Next.Next;
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    throw new IndexOutOfRangeException();
+                }
             }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
-        {
+        {//checked
             return GetEnumerator();
         }
     }

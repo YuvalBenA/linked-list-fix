@@ -1,3 +1,13 @@
 C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.AssemblyInfoInputs.cache
 C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.AssemblyInfo.cs
 C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.csproj.CoreCompileInputs.cache
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.exe
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.deps.json
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.runtimeconfig.json
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.runtimeconfig.dev.json
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.dll
+C:\BarakPractice\linked-list-fix\LinkedListFix\bin\Debug\netcoreapp3.1\LinkedListFix.pdb
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.csprojAssemblyReference.cache
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.dll
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.pdb
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.genruntimeconfig.cache
