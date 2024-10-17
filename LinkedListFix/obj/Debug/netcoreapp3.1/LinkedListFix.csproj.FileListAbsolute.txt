@@ -1,0 +1,3 @@
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.AssemblyInfoInputs.cache
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.AssemblyInfo.cs
+C:\BarakPractice\linked-list-fix\LinkedListFix\obj\Debug\netcoreapp3.1\LinkedListFix.csproj.CoreCompileInputs.cache

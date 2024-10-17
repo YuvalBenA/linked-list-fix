@@ -9,7 +9,7 @@ namespace LinkedListFix.Structures
         public Node<T> Head { get; private set; }
         public Node<T> Last { get; private set; }
         public T this[int index]
-        {
+        {//node<T>!=T??
             get
             {
                 return GetNodeByIndex(index).Value;
@@ -20,7 +20,7 @@ namespace LinkedListFix.Structures
             }
         }
 
-        public int Count { get; }
+        public int Count { get; private set; }
 
         public bool IsReadOnly { get; }
 
@@ -36,19 +36,23 @@ namespace LinkedListFix.Structures
                 }
                 return currentNode;
             }
+            else if (index==0)
+            {
+                return Head;
+            }
             else
             {
                 throw new IndexOutOfRangeException();
             }
-        }
+        }//checked
 
-        private int GetLength()
+        private void SetLength()
         {
             if (Head == null)
             {
-                return 0;
+                Count = 0;
             }
-
+            
             int countNodes = 1;
             Node<T> currentNode = Head;
 
@@ -58,15 +62,16 @@ namespace LinkedListFix.Structures
                 countNodes++;
             }
 
-            return countNodes;
+            Count = countNodes;
         }
 
         public void Add(T item)
-        {
+        {//last = last.next.list.last
             try
             {
                 Last.Next = item as Node<T>;
                 Last = Last.Next;
+                SetLength();
             }
             catch (InvalidCastException ex)
             {
@@ -78,6 +83,7 @@ namespace LinkedListFix.Structures
         {
             Head = null;
             Last = null;
+            Count=0;
         }
 
         public bool Contains(T item)
